@@ -25,3 +25,11 @@ for value in my_list:
 """
 ネストは3以下が目安
 """
+
+idx = 0
+for x in list_a:
+    print(idx, x)
+    idx += 1
+
+for idx, x in enumerate(list_a):
+    print(idx, x)
