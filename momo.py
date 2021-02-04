@@ -33,3 +33,30 @@ for x in list_a:
 
 for idx, x in enumerate(list_a):
     print(idx, x)
+
+
+"""
+プライベートメソッド、プロパティには頭にアンダースコアを2つ付ける
+クラスの内部からしかアクセスできなくなる
+継承先のクラスも利用できない
+"""
+__show_user_list
+__insert_date
+
+
+"""
+プロテクティッドメソッド、プロパティには頭にアンダースコアを1つ付ける
+クラスの内部からと、継承先のクラスで利用できる
+"""
+__show_user_list
+_insert_data
+
+"""
+tmpは一時的に使うような処理にだけ使用する
+数百行もある処理にtmpは使わない
+"""
+
+for user in users:
+    tmp_user = user
+    #処理
+    processed_users.append(tmp_user)
