@@ -35,7 +35,28 @@ class Hand:
             return True
         return False
 
-hand1 = Hand(0)
-hand2 = Hand(1)
-print(hand1.is_win(hand2))
-print(hand1.is_lose(hand2))
+
+class Strategy:
+
+    @abstractmethod
+    def next_hand(self):
+        pass
+
+    @abstractmethod
+    def study(self):
+        pass
+
+
+class SimpleStrategy(Strategy):
+    
+    def __init__(self):
+        self.hand = None
+        self.is_win = False
+    
+    def next_hand(self):
+        if not self.is_win:
+            self.hand = Hand(randint(0, 2))
+        return self.hand
+
+    def study(self, is_win):
+        self.is_win = is_win
